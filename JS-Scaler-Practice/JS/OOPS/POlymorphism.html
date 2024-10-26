@@ -1,0 +1,47 @@
+<html>
+
+<body>
+    <script>
+        class Vehicle {
+            start() {
+                console.log("Vehicle started!");
+            }
+        }
+
+        class Car extends Vehicle {
+            // Write Code here ========
+            start() {
+                console.log('Car started!')
+            }
+        }
+
+        class Motorcycle extends Vehicle {
+            // Write Code here ========
+            start() {
+                console.log('Motorcycle started!')
+            }
+        }
+
+        let ob = new Vehicle();
+        let ob1 = new Car();
+        let ob2 = new Motorcycle();
+        ob.start();
+        ob1.start();
+        ob2.start();
+
+        const numbers = [1, 2, 3, 4];
+
+// Using reduce to sum the numbers
+const sum = numbers.reduce((accumulator, current) => {
+    console.log(accumulator);
+    return accumulator + current; // Update the accumulator
+    
+},0); // Initial value of the accumulator is 0
+
+console.log(sum); // Output: 10
+
+
+    </script>
+</body>
+
+</html>

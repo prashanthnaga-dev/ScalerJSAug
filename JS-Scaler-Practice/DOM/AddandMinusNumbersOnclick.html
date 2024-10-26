@@ -1,0 +1,41 @@
+<!-- // Adds number one first button and subtracts number on 2nd button click -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style></style>
+</head>
+
+<body>
+
+    <button id="double">Click</button>
+    <button>Click</button>
+    <script>
+        const btn = document.getElementById('double');
+        const btn1 = document.querySelectorAll('button')[1];
+        const para = document.createElement('p');
+        const body = document.querySelector('body');
+        body.appendChild(para);
+        let count = 0;
+        btn.addEventListener('click', function () {
+            
+            count++;
+            
+            para.innerText = count;
+            
+
+
+        })
+        btn1.addEventListener('click', function () {
+
+            count--;
+            para.innerText = count;
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

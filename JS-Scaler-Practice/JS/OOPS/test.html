@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //let a = null;
+        //console.log(typeof (a));
+        let p1 = {
+
+            name: "sci",
+            age: 20
+
+        }
+        let x = 1;
+        let y = 2;
+        x = y;
+
+        console.log(x, y);
+
+        const gvar = "I am globa"
+        
+        function inner() {
+
+            const inv = "i am inner"
+
+            function loc() {
+
+                const lo = "I am local";
+
+                console.log(inv); // Gives I am inner
+                console.log(lo); // Gives I am local
+                console.log(gvar);// Gives I am gloab
+            }
+            loc();
+        }
+        inner();
+        // CLOSURES :
+// Scope chaining is closely related to closures. A closure occurs when an inner function retains access to its outer function’s scope even after the outer function has finished executing. This is often used to create private variables or functions.  In this  example, the inner function maintains access to the count variable even after createCounter has executed.
+        // function createCounter() {
+        //     let count = 0; // Private variable
+
+        //     return function () {
+        //         count += 1;
+        //         return count;
+        //     };
+        // }
+       
+       
+
+        // const counter = createCounter();
+        // console.log(counter()); // 1
+        // console.log(counter()); // 2
+
+        //console.log(a);
+        //var a=5; // Shows undefined not errror
+
+         //console.log(b);
+         //let b=5; // Trrows reference error as declared when let stored in TDZ. Will not be accessed until reaced execution phase. Temporal Dead Zone
+       
+
+    </script>
+</body>
+
+</html>

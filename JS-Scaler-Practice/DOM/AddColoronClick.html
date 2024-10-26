@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid;
+            height: 10rem;
+            width: 10rem;
+        }
+
+        .container>div:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="red">red</div>
+        <div class="blue">blue</div>
+        <div class="green">green</div>
+    </div>
+    <script>
+
+
+        // Write JS Solution Here =================================
+        // Changes the color of clicke div  to clicked color class of that div
+
+         const ulist = document.querySelector('.container');
+          const listvalues = ulist.querySelectorAll('div');
+
+        for (let i = 0; i < listvalues.length; i++) {
+
+            const clicked = listvalues[i];
+            clicked.addEventListener('click', function (e) {
+                const target = e.currentTarget;
+                console.log(e);
+
+                const getClass = target.getAttribute('class');
+
+                clicked.style.backgroundColor = getClass;
+
+
+            })
+
+
+        }
+
+       
+
+        // Changes the color of entire container to clicked color
+
+        // document.querySelector('.container').addEventListener('click', function (event) {
+
+
+        //     if (event.target.classList.contains('red')) {
+
+        //         this.style.backgroundColor = 'red';
+
+        //     } else if (event.target.classList.contains('blue')) {
+
+        //         this.style.backgroundColor = 'blue';
+        //     } else if (event.target.classList.contains('green')) {
+
+        //         this.style.backgroundColor = 'green';
+        //     }
+        // })
+
+
+
+
+    </script>
+</body>

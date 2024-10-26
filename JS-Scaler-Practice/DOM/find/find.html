@@ -1,0 +1,35 @@
+<html>
+
+</html>
+
+</html>
+
+
+
+<body>
+    <script>
+
+        function findFirstNegative(numbers) {
+            // Write your code here
+            // return the result
+            return numbers.find((num) => {
+
+                if (num < 0) {
+
+                    return num;
+                }else{
+
+                    return undefined;
+                }
+            });
+
+        }
+
+
+        let numbers = [1, 2, 5];
+
+        console.log(findFirstNegative(numbers));
+    </script>
+</body>
+
+</html>

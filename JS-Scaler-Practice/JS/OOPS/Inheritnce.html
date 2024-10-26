@@ -1,0 +1,35 @@
+<html>
+
+<body>
+    <script>
+    class Vehicle {
+            // Write Code here -----
+            constructor(make, model) {
+
+
+                this.make = make,
+                    this.model = model
+
+
+            }
+
+        }
+
+        class Car extends Vehicle {
+            // Write Code here -----
+            constructor(make, model, numDoors) {
+                super(make, model, numDoors)
+
+
+                this.numDoors = numDoors;
+
+            }
+        }
+
+        let car = new Car('Hyundai','ba',555);
+        console.log(car.make,car.model,car.numDoors);
+        console.log(car.make);
+    </script>
+</body>
+
+</html>

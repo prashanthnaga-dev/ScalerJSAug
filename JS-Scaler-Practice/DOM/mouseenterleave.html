@@ -1,0 +1,79 @@
+<!-- Write a JavaScript program to perform the following task:
+
+You are given an empty cell.
+Whenever the mouse enters the cell,
+a jail should be drawn over it.
+And it should be removed once it leaves. -->
+
+<!DOCTYPE html>
+<html>
+<!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
+
+src = 'profile.png'
+
+instead of 
+
+src = './assets/profile.png'
+-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .cell {
+            border: 1px solid;
+            margin: auto;
+            margin-top: 10rem;
+            height: 20rem;
+            width: 20rem;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cell"></div>
+
+</body>
+<script>
+    // Write your JS program here
+    var cell = document.querySelector('.cell');
+    cell.addEventListener('mouseenter', function () {
+
+       // cell.innerHTML = '<img src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/055/850/original/jail.jpg?1699030242"  alt="not define">'; This works too
+       cell.style.backgroundImage = "url('https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/055/850/original/jail.jpg?1699030242')";
+       
+
+
+    });
+    cell.addEventListener('mouseleave', function () {
+
+        cell.innerHTML = ' ';
+
+    });
+
+    // document.querySelector('.cell').onmouseenter = function () {
+
+    //     onmouseEnter();
+    // }
+
+    // function onmouseEnter() {
+
+    //     document.querySelector('.cell').innerHTML = '<img src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/055/850/original/jail.jpg?1699030242"  alt="not define">'
+    // }
+    // document.querySelector('.cell').onmouseleave = function () {
+
+    //     onmouseLeave();
+    // }
+
+    // function onmouseLeave() {
+
+    //     document.querySelector('.cell').innerHTML = ' ';
+    // }
+</script>
+
+</html>

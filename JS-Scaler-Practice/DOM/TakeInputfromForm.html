@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>DATABASE</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>S. No.</th>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Sameer</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rohan</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form>
+        <label for="name">Name:
+            <input type="text" id="name" />
+        </label>
+        <label for="marks">Marks:
+            <input type="number" id="marks" />
+        </label>
+        <input type="submit" value="Submit" />
+    </form>
+    <script>
+        // Q Write a script which takes the entry from the form and add it into the table
+        let sn0 = 3;
+        var tablerow = document.querySelector('tbody');
+
+
+        var submit = document.querySelector('input[type="submit"]');
+
+
+        submit.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var marks = document.getElementById('marks').value;
+            //var snumbwe = document.getElementById('marks').value;
+            const newrow = document.createElement('tr');
+            const snocell = document.createElement('td');
+            const namecell = document.createElement('td');
+            const markscell = document.createElement('td');
+            //  var sno = document.querySelector('table>tbody>tr>td').innerHTML;
+
+
+            snocell.textContent = sn0++;
+            namecell.textContent = name;
+            markscell.textContent = marks;
+
+            newrow.appendChild(snocell);
+            newrow.appendChild(namecell);
+            newrow.appendChild(markscell);
+            tablerow.appendChild(newrow);
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

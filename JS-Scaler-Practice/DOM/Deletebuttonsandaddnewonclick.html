@@ -1,0 +1,69 @@
+<!-- A button of class 'double' exists inside the parent div of id '#doubleHolder' in the HTML.
+Write a JavaScript program such that whenever the button is clicked :
+
+1. It is destroyed (removed from the parent div)
+2. Two new buttons are created in its place. (inside the same parent div)
+3. The new buttons should also inherit the same feature. Making it a recursive feature.
+
+Hint: Use the class of 'double' and add the functionality to all the buttons having a class of 'double'
+i.e., All new buttons should also have 'double' as class -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="doubleHolder" style="background-color:red">
+        <button class="double">double</button>
+    </div>
+
+    <script>
+        // Write your JS program here =========
+        const btn1 = document.querySelector('#doubleHolder');
+        btn1.addEventListener('click',(e)=>{
+
+            console.log(e.target, e.currentTarget);
+        })
+
+        // const btn = document.querySelector('#doubleHolder .double');
+
+        // btn.addEventListener('click', Addbuttons);
+
+        // function Addbuttons(event) {
+        //     event.preventDefault();
+
+        //     const parentDiv = document.getElementById('doubleHolder');
+        //     event.target.remove();
+        //     for (let i = 0; i < 2; i++) {
+        //         const newbtn = document.createElement('button');
+        //         newbtn.innerText = 'double';
+        //         newbtn.className = 'double';
+        //         newbtn.addEventListener('click',Addbuttons);
+        //         parentDiv.appendChild(newbtn);
+
+        //     }
+
+
+
+
+
+
+
+        // }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

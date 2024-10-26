@@ -1,0 +1,77 @@
+<html>
+
+<body>
+    <script>
+
+        const user = {
+            firstName: "John",
+            lastName: "Doe",
+            getFullName: function () {
+
+                console.log(`${this.firstName} ${this.lastName} `)
+            }
+        };
+
+        user.getFullName();
+
+        function Person(name) {
+            // Write Code here ====
+            return this.name = name;
+
+        }
+
+        console.log(Person('Alie'));
+        class Vehicle {
+    constructor(make,model){
+
+        car= {
+
+make: "Toyota",
+model: "Camry"
+
+}
+
+
+    }
+    
+   
+
+}
+  
+class Car extends Vehicle {
+   constructor(make,model,numDoors){  
+    super(make,model,numDoors);
+      car1={
+
+numDoors:"4"
+
+}
+
+}
+    
+}
+
+const car1 = new Car('Toyota', 'Camry', 4);
+console.log(car1.make); 
+        // toy2.color();
+       
+        // Constructor function for Person
+        // function Person(name) {
+        //     this.name = name;
+        // }
+
+        // // Prototype for Person
+        // Person.prototype.introduce = function () {
+        //     console.log(`Hi, I'm ${this.name}.`);
+        // }
+        // const person1 = new Person('John');
+        // const person2 = new Person('Jane');
+        // console.log(person1.introduce());
+        // console.log(person2.introduce());
+
+
+
+    </script>
+</body>
+
+</html>

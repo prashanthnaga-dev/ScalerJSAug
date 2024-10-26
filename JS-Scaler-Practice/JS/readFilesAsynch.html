@@ -1,0 +1,74 @@
+<!-- Using async await complete the function twoSeries(file1, file2, ansArray),
+which takes in two file names as file1 and file2 and ansArray
+
+Write the code such that:
+1. Both the files are serially read using the fetchByPromise(fileName)
+2. Add the content of both files in the ansArray.
+3. At the end of the contents, the ansArray should hold string "All files have been read" -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+
+        function fetchBypromise(fileName) {
+
+            return new Promise((resolve, reject) => {
+                
+                setTimeout(() => {
+
+                    resolve(`content : ${fileName}`);
+                }, 1000);
+
+            });
+
+
+        }
+        // using asynch await function
+
+        async function twoSeries(file1, file2, ansArray) {
+
+
+            const content1 = await fetchBypromise(file1);
+            ansArray.push(content1);
+            const content2 = await fetchBypromise(file2);
+            ansArray.push(content2);
+
+            ansArray.push('read files');
+
+
+        }
+
+        // using regular promise
+        // fetchBypromise()
+        // .then((ticket)=>{
+
+        //     console.log(ticket);
+
+
+        // })
+        // .catch((err)=>{
+
+        //     console.log(err);
+        // })
+
+
+
+        let ansArray = [];
+        twoSeries('FILE1', 'FILE2', ansArray).then(() => {
+            console.log(ansArray);
+
+
+        });
+
+    </script>
+</body>
+
+</html>
+
+// Expected Output:
+// ['content : FILE 1', 'content : FILE 2', 'All files have been read']

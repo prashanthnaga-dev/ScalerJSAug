@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+    <p id="testme">hello</p>
+    <button>cik</button>
+    <script>
+
+        const pid=document.getElementById('testme');
+       
+        const btn=document.querySelector('button');
+        btn.addEventListener('click',function(e){
+
+            const newname=document.createElement('h1');
+        newname.innerHTML='HelloSir';
+        const body=document.querySelector('body');
+        body.appendChild(newname);
+        console.log(body);
+
+
+        })
+    </script>
+</body>
+</html>

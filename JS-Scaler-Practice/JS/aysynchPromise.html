@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+function handlefile1(coffee){
+
+    return new Promise(function(resolve,reject){
+
+        setTimeout(()=>{
+             
+            resolve(`${coffee} is ordered`)
+
+
+        },1000);
+    })
+}
+
+function handlefile2(drink){
+
+    let res= new Promise((resolve,reject)=>{
+
+        resolve(`${drink} and processed`);
+        
+        
+
+    })
+    
+return res;
+    
+    
+    
+    
+}
+
+async function hall(){
+
+ let p= await handlefile1('tea');
+ let c=await handlefile2(p);
+ console.log(c);
+ return c;
+}
+
+hall();
+
+        </script>
+    </body>
+</html>

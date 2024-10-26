@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Management App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="toolbox-cont">
+        <div class="toolbox-priority-cont">
+            <div class="lightpink color"></div>
+            <div class="lightgreen color"></div>
+            <div class="lightblue color"></div>
+            <div class="black color"></div>
+        </div>
+
+        <div class="action-btn-cont">
+            <div class="add-btn">
+                <img src="plus-logo.png" alt="color-logo" height="50%">
+            </div>
+            <div class="remove-btn">
+                <img src="cross-logo.png" alt="color-logo" height="50%">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-cont">
+        <!-- <div class="ticket-cont">
+            <div class="ticket-color"></div>
+            <div class="ticket-id">id 1</div>
+            <div class="task-area"> this  is task 1</div>
+            <div class="ticket-lock">
+              <i class="fa-solid fa-lock"></i>
+           </div> -->
+    </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal-cont">
+
+        <textarea class="textArea-cont" placeholder="Enter Your Task" spellcheck="false">
+
+       </textarea>
+
+
+        <div class="priority-colors-container">
+            <div class="lightpink priority-color"></div>
+            <div class="lightgreen priority-color"></div>
+            <div class="lightblue priority-color"></div>
+            <div class="black priority-color active"></div>
+        </div>
+
+    </div>
+
+    <script>
+
+        let ticketID = 0;
+
+        function createTicket(ticketTask) {
+
+            const ticketColor = getRandomColor();
+
+
+            const ticketDiv = document.createElement('div');
+            ticketDiv.classList.add('ticket-cont');
+
+
+            ticketDiv.innerHTML = `
+    <div class="ticket-color ${ticketColor}"></div>
+    <div class="ticket-id">#${ticketID}</div>
+    <div class="task-area">${ticketTask}</div>
+    <div class="ticket-lock">
+      <i class="fa-solid fa-lock"></i>
+    </div>
+  `;
+
+
+          
+
+
+            const mainCont = document.querySelector('.main-cont');
+            mainCont.appendChild(ticketDiv);
+            ticketID++;
+        }
+
+
+        function getRandomColor() {
+            const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+
+        document.querySelector('.textArea-cont').addEventListener('keydown', function (e) {
+            if (e.key === 'Shift') {
+
+                const ticketTask = e.target.value;
+
+
+                createTicket(ticketTask);
+
+
+                e.target.value = '';
+            }
+        });
+
+    </script>
+    <script defer>
+        let addBtn = document.querySelector(".add-btn");
+        let addFlag = false;
+
+        addBtn.addEventListener("click", function () {
+            addFlag = !addFlag;
+
+            if (addFlag == true) {
+                modalCont.style.display = "flex";
+            } else {
+                modalCont.style.display = "none";
+            }
+        });
+
+        var textareaCont = document.querySelector('textArea-cont').value;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<html>
+
+<body>
+    <script>
+        let parent={
+
+            health:50,
+            madhealth: function(n1,n2){
+return this.health+=n1+n2;
+            }
+        }
+        let child={
+
+            health:9
+
+
+        }
+       const binds=parent.madhealth.bind(child,4,5);
+
+        console.log(binds());
+        class BankAccount {
+            #accountNumber;
+            #balance;
+
+            constructor() {
+                this.#accountNumber = this.generateAccountNumber();
+                this.#balance = 0;
+            }
+
+            generateAccountNumber() {
+                return Math.floor(Math.random() * 1000000000); // Random 9-digit account number
+            }
+
+            deposit(amount) {
+                if (amount > 0) {
+                    this.#balance += amount;
+                    return this.#balance;
+                }
+            }
+
+            withdraw(amount) {
+                if (amount > 0 && amount <= this.#balance) {
+                    this.#balance -= amount;
+                    return amount;
+                } else {
+                    return 'Insufficient funds';
+                }
+            }
+
+            getBalance() {
+                return this.#balance; // Optional method to retrieve balance
+            }
+        }
+
+        // Example usage
+        const myAccount = new BankAccount();
+        myAccount.deposit(500);
+        myAccount.withdraw(200);
+
+
+        let account = new BankAccount();
+        account.deposit(500);
+        account.withdraw(300);
+    </script>
+</body>
+
+</html>
